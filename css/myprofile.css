@@ -1,0 +1,60 @@
+/* .profile {
+ 
+} */
+
+body {
+  background-color: rgb(29, 27, 27);
+}
+
+.cover {
+  display: block;
+  position: absolute;
+  width: 350;
+  height: 400px;
+  border: violet solid 1px;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+}
+.name {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  flex-basis: 25%;
+  position: sticky;
+  top: 100px;
+  margin-top: 100px;
+  margin-left: 350px;
+  align-self: flex-start;
+  font-weight: bold;
+  color: beige;
+  font-size: 50px;
+}
+.cover img {
+  max-width: 100%;
+  z-index: 1;
+}
+.profile {
+  background-image: url(/images/mostafa.jpeg);
+  position: absolute;
+  border: violet solid 1px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 300px 0 10px 20px;
+  z-index: 999;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}
+.main {
+  display: block;
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.profile img {
+  max-width: 100%;
+  z-index: 1;
+}

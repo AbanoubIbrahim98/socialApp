@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="myprofile.css" />
+
+    <title>MyProfiel</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="cover">
+        <img src="/images/mostafacover.jpg" class="sora" />
+      </div>
+      <div class="profile">
+        <div class="name">Mostafa</div>
+    <div id="container"> </div>
+
+      </div>
+    </div>
+
+    <script>
+         var cooki=document.cookie;
+      var yourName=cooki.indexOf("name");
+      var yourNamelst=cooki.indexOf(";",yourName);
+      if(yourNamelst<0)
+      {
+        var Nam=cooki.substring(yourName,cooki.length);
+      }else{
+        Nam=cooki.substring(yourName,yourNamelst);
+      }
+      var nameValue=Nam.split("=")[1];
+
+
+      var yourMobile=cooki.indexOf("mobile");
+      var yourMobileLst=cooki.indexOf(";",yourMobile);
+      if(yourMobileLst<0)
+      {
+        var mob=cooki.substring(yourMobile,cooki.length);
+      }else{
+        mob=cooki.substring(yourMobile,yourMobileLst)
+      }
+      var mobValue=mob.split("=")[1];
+
+      var yourAdress=cooki.indexOf("address");
+      var yourAdressLst=cooki.indexOf(";",yourAdress);
+      if(yourAdressLst<0)
+      {
+        var adr=cooki.substring(yourAdress,cooki.length);
+      }else{
+        adr=cooki.substring(yourAdress,yourAdressLst)
+      }
+      var adrValue=adr.split("=")[1];
+
+      var yourGender=cooki.indexOf("gender");
+      var yourGenderLst=cooki.indexOf(";",yourGender);
+      if(yourGenderLst<0)
+      {
+        var gen=cooki.substring(yourGender,cooki.length);
+      }else{
+        gen=cooki.substring(yourGender,yourGenderLst)
+      }
+      var genValue=gen.split("=")[1];
+      document.getElementsByClassName("name")[0].innerHTML=nameValue;
+      document.getElementById("container").style.color="white";
+      document.getElementById("container").style.height=100+"px";
+      document.getElementById("container").style.width=300+"px";
+      document.getElementById("container").innerHTML="About ME"+"<br><br>"+"Mobile:   "+mobValue+"<br>"+"Address:   "+adrValue+"<br>"+"Gender:   "+genValue;
+      document.getElementById("container").style.position="absolute";
+      document.getElementById("container").style.left=400+"px";
+      document.getElementById("container").style.top=200+"px";
+      if(nameValue=="mohamed")
+      {
+        document.getElementsByClassName("profile")[0].style.backgroundImage="url('images/mohammed.jpeg')";
+        document.getElementsByClassName("sora")[0].src="images/feed-image-3.png"
+
+      }
+      if(nameValue=="abanob")
+      {
+        document.getElementsByClassName("profile")[0].style.backgroundImage="url('images/abanop.jpeg')";
+        document.getElementsByClassName("sora")[0].src="images/feed-image-2.png"
+
+      }
+        
+    </script>
+  </body>
+</html>

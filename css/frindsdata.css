@@ -1,0 +1,22 @@
+body {
+  background-color: gray;
+}
+.names {
+  font-size: 90px;
+}
+
+.imgefrind {
+  background-image: url(/images/mostafa.jpeg);
+  position: absolute;
+  border: violet solid 1px;
+  border-radius: 100px;
+  width: 200px;
+  height: 200px;
+  margin: 100px 0 10px 20px;
+  z-index: 999;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+}

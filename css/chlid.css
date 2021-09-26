@@ -1,0 +1,12 @@
+body {
+  background-color: gray;
+}
+.names {
+  font-size: 90px;
+}
+
+.story-gallery img {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+}

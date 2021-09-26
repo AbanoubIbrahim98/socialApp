@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  box-sizing: border-box;
+}
+.nav-left{
+  height: 80px;
+  background-color: #1876f2;
+}
+      .namelogo {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  position: absolute;
+  left: 30px;
+}
+      .inpt{
+        font-size: 50px;
+        position: absolute;
+        top: 100px;
+        left: 120px;
+      }
+    .container2{
+      text-align: center;
+      position: relative;
+      top: 150px;
+    }
+    </style>
+</head>
+<body>
+  <div class="nav-left">
+    <h1 class="namelogo">Frindly</h1>
+    </div>
+  <div class="inpt">Registertion</div>
+  <div class="container2">
+        <label>Your Name</label>
+        <input type="text"name="userName" placeholder="enter your name">
+        <span></span>
+        <br> <br>
+        <label for="">your Mail</label>
+        <input type="text" name="mail" placeholder="enter your mail">
+        <span></span>
+        <br> <br>
+        <label for="">password</label>
+        <input type="password" name="password" >
+        <span></span>
+        <br><br>
+        <label for="">mobile phone</label>
+        <input type="tel" name="mobilePhone" placeholder="01******">  
+        <span></span>      
+        <br><br>
+        
+        <label for="">your Address</label>
+        <input type="text" name="yourAddress" placeholder="enter your address">
+        <span></span>
+        <br> <br>
+        <input type="radio" name="gender" value="male" >
+        <label for="">Male</label>
+        <br> <br>
+        <input type="radio" name="gender" value="female">
+        <label for="">Female</label>
+        <br> <br>
+        <button> Register</button>
+    </div>
+    <script>
+          document.querySelector("button").addEventListener("click",function(){
+          //var urla=  location.assign("page1.html");
+          var q,a,b,c,m ;
+            var da=new Date();
+            da.setMonth(da.getMonth()+3)
+            var Elem= document.querySelectorAll("input");
+            var regex=/^[a-zA-Z]{1,10}$/;
+            if(regex.test(Elem[0].value))
+            {
+            document.cookie="name="+Elem[0].value+";expires="+da;
+              document.getElementsByTagName("span")[0].innerHTML="";
+              q=1;
+            }else{
+              document.getElementsByTagName("span")[0].innerHTML="please enter valid name";
+              document.getElementsByTagName("span")[0].style.color="red";
+              q=0;
+            }
+            var regex1= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if(regex1.test(Elem[1].value))
+            {
+            document.cookie="mail="+Elem[1].value+";expires="+da;
+            document.getElementsByTagName("span")[1].innerHTML="";
+            a=1;
+            }else{
+              document.getElementsByTagName("span")[1].innerHTML="please enter valid mail";
+              document.getElementsByTagName("span")[1].style.color="red";
+
+              a=0;
+            }
+            var regex2=/^[a-zA-Z0-9]{5,10}$/;
+            if(regex2.test(Elem[2].value))
+            {
+              document.cookie="password="+Elem[2].value+";expires="+da;
+              document.getElementsByTagName("span")[2].innerHTML="";
+              b=1;
+            }else{
+            document.getElementsByTagName("span")[2].innerHTML="please enter valid password between 5-10";
+            document.getElementsByTagName("span")[2].style.color="red";
+
+            b=0;
+            }
+            var regex3=/^(01)(0|1|2|5)[0-9]{8}$/;
+            if(regex3.test(Elem[3].value))
+            {
+            document.cookie="mobile="+Elem[3].value+";expires="+da;
+            document.getElementsByTagName("span")[3].innerHTML="";
+            c=1;
+            }else{
+              document.getElementsByTagName("span")[3].innerHTML="please enter valid mobile";
+              document.getElementsByTagName("span")[3].style.color="red";
+
+              c=0;
+            }
+            var regex4=/^[a-zA-Z]{1,10}$/
+            if(regex4.test(Elem[4].value))
+            {
+              document.cookie="address="+Elem[4].value+";expires="+da;
+              document.getElementsByTagName("span")[4].innerHTML="";
+              m=1;
+            }else{
+              document.getElementsByTagName("span")[4].innerHTML="please enter valid Address";
+              document.getElementsByTagName("span")[4].style.color="red";
+
+              m=0;
+            }
+            if(Elem[5].checked)
+            {document.cookie="gender="+Elem[5].value+";expires="+da;}
+            if(Elem[6].checked)
+            {document.cookie="gender="+Elem[6].value+";expires="+da;}
+            if(a==1&&b==1&&c==1&&m==1&&q==1){
+              location.assign("page1.html");
+            }
+
+          })
+    </script>
+</body>
+</html>
